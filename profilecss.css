@@ -73,10 +73,11 @@ nav li{
 @media (max-width: 1200px) {
 	nav{
         background-color: lightcyan;
-        height: 4%;
-        padding: 2%;
+        height: 3%;
+        padding: 1%;
         padding-top: 0;
-        margin: 0;
+        margin: 1%;
+        margin-top: 0;
         border: solid;
         border-width: 0.2em;
         border-color: darkcyan;
@@ -90,6 +91,7 @@ nav li{
         vertical-align: middle;
         padding: 0;
         margin: 1%;
+        margin-top: 0;
     }
     nav li{
         display: inline-block;
@@ -106,8 +108,8 @@ nav li{
 }
 
 #info p{
-	font-family: monospace;
-	font-size: 120%;
+	font-family: sans-serif;
+	font-size: 100%;
 	color: black;
 }
 #skills p{
