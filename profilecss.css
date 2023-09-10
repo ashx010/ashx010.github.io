@@ -4,7 +4,7 @@ body{
 }
 h1{
 	font-family: arial;
-	olor: darkcyan;
+	color: darkcyan;
 }
 h2{
 	font-family: arial;
@@ -40,16 +40,16 @@ p{
 }
 div{
 	background-color: white;
-	margin-left: 15em;
-	margin-right: 15em;
+	margin-left: 15%;
+	margin-right: 15%;
 	margin-bottom: 1em;
 	padding: 2em;
 }
 nav{
 	background-color: lightcyan;
-	height: 15em;
-	padding: 5px;
-	margin: 5px;
+	height: 25%;
+	padding: 2%;
+	margin: 2%;
 	border: solid;
 	border-width: 3px;
 	border-color: darkcyan;
@@ -59,10 +59,12 @@ nav{
 }
 nav ul{
 	list-style-type: none;
+	padding: 5%;
+	margin: 5%;
 }
 nav li{
-	padding: 1em;
-	padding-left: 0.5em;
+	padding: 15%;
+	padding-left: 0%;
 }
 
 #info p{
