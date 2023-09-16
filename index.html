@@ -1,70 +1,165 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Yash Aggarwal</title>
-		<meta charset="UTF-8">
-		<link type="text/css" href="profilecss.css" rel="stylesheet">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Tech Log</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 	</head>
 	<body>
-		<nav>
-			<ul>
-				<li><a href="#about">About</a></li>
-				<li><a href="#skills">Skills</a></li>
-				<li><a href="#projects">Projects</a></li>
-				<li><a href="#experience">Experience</a></li>
-			</ul>
-		</nav>
-
-		<div id='info'>
-			<img src="idea.gif" height="200" alt="Some Gif" style="float: right; margin: 1em;">
-			<p style="font-size: 200%; padding-top: 2em; font-family: monospace;"><strong>YASH AGGARWAL</strong></p>
-			<p>CONTACT : +91 9711029829</p>
-			<p>EMAIL : yashaggarwal960@gmail.com</p>
-			<p><a href="https://www.linkedin.com/in/yash-aggarwal-ashx010/" target="blank">LINKED IN</a></p>
-			<p><a href="https://www.kaggle.com/ashx010" target="blank">KAGGLE</a></p>
-			<p><a href="https://www.github.com/ashx010" target="blank">GITHUB</a></p>
+		<div id='navigationbar'>
+			<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			  <div class="container-fluid">
+			    <a class="navbar-brand" href="#">My Profile</a>
+			    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			      <span class="navbar-toggler-icon"></span>
+			    </button>
+			    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			        <li class="nav-item">
+			          <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+			        </li>
+			        <li class="nav-item">
+			          <a class="nav-link" href="#skillsper">Skills</a>
+			        </li>
+			        <li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			            More
+			          </a>
+			          <ul class="dropdown-menu">
+			            <li><a class="dropdown-item" href="#aboutper">About</a></li>
+			            <li><a class="dropdown-item" href="#experienceper">Experience</a></li>
+			            <li><hr class="dropdown-divider"></li>
+			            <li><a class="dropdown-item" href="#projectsper">Projects</a></li>
+			          </ul>
+			        </li>
+			      </ul>
+			      <!--form class="d-flex" role="search">
+			        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			        <button class="btn btn-outline-success" type="submit">Search</button>
+			      </form-->
+			    </div>
+			  </div>
+			</nav>
 		</div>
-
-		<div id='about'>
-			<h2>ABOUT</h2>
-			<p>As a B.Tech CSE student and a fervent data science and machine learning enthusiast, I am deeply committed to leveraging my skills to unlock valuable insights from data, driving informed decision-making in various domains. My expertise in Python, SQL, and diverse machine learning algorithms has empowered me to undertake compelling projects encompassing data preprocessing, analysis, and visualization.Through my extensive work on Kaggle, I have honed my abilities as a Kaggle Notebook expert, demonstrating proficiency in executing a variety of projects. Moreover, my active participation in Kaggle competitions has served as a catalyst for refining my data science skills, pushing me to constantly seek new challenges and opportunities for growth in the field.In addition to my passion for data science, I possess a broad spectrum of skills, ranging from various data preprocessing techniques like data cleaning, data transformation, feature engineering, and data scaling, to comprehensive knowledge of machine learning algorithms such as regression, classification, trees, ensemble methods, gradient boosting, neural networks, clustering, association ruling, dimensionality reduction, and natural language processing. I am adept at optimizing these models through techniques like hyperparameter tuning, ensuring accurate and efficient results.I am always eager to explore new avenues to contribute to the advancement of data science and would be thrilled to connect with like-minded professionals to collaborate on impactful projects.</p>
+		<div id ="infoper" style="padding: 2% 10% 0 10%;">
+			<div class="card mb-3" style="width: 100%;">
+			  <div class="row g-0">
+			    <div class="col-md-4">
+			      <img src="PROFILE.jpeg" class="img-fluid rounded-start" alt="Profile Picture">
+			    </div>
+			    <div class="col-md-8">
+			      <div class="card-body">
+			        <h4 class="card-title">YASH AGGARWAL</h4>
+					<ul class="list-group list-group-flush">
+					  	<li class="list-group-item">CONTACT : +91 9711029829</li>
+					    <li class="list-group-item">EMAIL : yashaggarwal960@gmail.com</li>
+					    <li class="list-group-item"><a href="https://www.kaggle.com/ashx010" target="blank" class="btn btn-primary">KAGGLE</a></li>
+					    <li class="list-group-item"><a href="https://www.github.com/ashx010" target="blank" class="btn btn-primary">GITHUB</a></li>
+					    <li class="list-group-item"><a href="https://www.linkedin.com/in/yash-aggarwal-ashx010/" target="blank" class="btn btn-primary">LINKED IN</a></li>
+					</ul>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 		</div>
-		<div id='skills'>
-			<h2>SKILLS</h2>
-			<ul>
-				<li><p>PYTHON</p></li>
-				<li><p>MACHINE LEARNING</p></li>
-				<li><p>DATA SCIENCE</p></li>
-				<li><p>DATA ANALYSIS</p></li>
-				<li><p>SQL</p></li>
-				<li><p>NLP</p></li>
-				<li><p>NEURAL NETWORKS</p></li>
-				<li><p>STATISTCAL ANALYSIS</p></li>
-				<li><p><p>MICROSOFT OFFICE</p></li>
-				<li><p>MS-EXCEL</p></li>
-				<li><p>HTML</p></li>
-				<li><p>CSS</p></li>
-				<li><p>JAVASCRIPT</p></li>
-				<li><p>PHP</p></li>
-			</ul>
+		<div id ="aboutper" style="padding: 2% 10% 0 10%;">
+			<div class="card text-center" style="width: 100%;">
+			  <div class="card-header">
+			    <h5 class="card-title">ABOUT</h5>
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">As a B.Tech CSE student and a fervent data science and machine learning enthusiast, I am deeply committed to leveraging my skills to unlock valuable insights from data, driving informed decision-making in various domains. My expertise in Python, SQL, and diverse machine learning algorithms has empowered me to undertake compelling projects encompassing data preprocessing, analysis, and visualization.Through my extensive work on Kaggle, I have honed my abilities as a Kaggle Notebook expert, demonstrating proficiency in executing a variety of projects. Moreover, my active participation in Kaggle competitions has served as a catalyst for refining my data science skills, pushing me to constantly seek new challenges and opportunities for growth in the field.In addition to my passion for data science, I possess a broad spectrum of skills, ranging from various data preprocessing techniques like data cleaning, data transformation, feature engineering, and data scaling, to comprehensive knowledge of machine learning algorithms such as regression, classification, trees, ensemble methods, gradient boosting, neural networks, clustering, association ruling, dimensionality reduction, and natural language processing. I am adept at optimizing these models through techniques like hyperparameter tuning, ensuring accurate and efficient results.I am always eager to explore new avenues to contribute to the advancement of data science and would be thrilled to connect with like-minded professionals to collaborate on impactful projects.</p>
+			    
+			  </div>
+			  <div class="card-footer text-center">
+			    <h6 class="card-title"><a href="#" class="card-link">TOP</a></h6>
+			  </div>
+			</div>
 		</div>
-		<div id='experience'>
-			<h2>EXPERIENCE</h2>
-			<ul>
-				<li><p style="margin: 1em;">IBM</p>
-					<p style="font-family: monospace; margin-left: 2em;">Training Data Science With Python</p>
-					<p style="font-family: monospace; margin-left: 2em;">August 2022</p>
-				</li>
-			</ul>
+		<div id="skillsper" style="padding: 2% 10% 0 10%;">
+			<div class="card" style="width: 100%;">
+			  <div class="card-header text-center">
+			    <h5 class="card-title">SKILLS</h5>
+			  </div>
+				<div class="row">
+				  <div class="card-body col-sm-6 mb-3 mb-sm-0" style="width: 25%; padding-left:2.5%; padding-right:2.5%;">
+				    <ul class="card-text list-group">
+					  <li class="list-group-item">PYTHON</li>
+					  <li class="list-group-item">MACHINE LEARNING</li>
+					  <li class="list-group-item">DATA SCIENCE</li>
+					  <li class="list-group-item">DATA ANALYSIS</li>
+					  <li class="list-group-item">SQL</li>
+					  <li class="list-group-item">NLP</li>
+					  <li class="list-group-item">NEURAL NETWORKS</li>
+					</ul>
+				  </div>
+				  <div class="card-body col-sm-6" style="width: 25%; padding-left: 2.5%; padding-right: 2.5%;">
+					<ul class="card-text list-group">
+					  <li class="list-group-item">STATISTICAL ANALYSIS</li>
+					  <li class="list-group-item">MICROSOFT OFFICE</li>
+					  <li class="list-group-item">MS-EXCEL</li>
+					  <li class="list-group-item">HTML</li>
+					  <li class="list-group-item">CSS</li>
+					  <li class="list-group-item">JAVASCRIPT</li>
+					  <li class="list-group-item">PHP</li>
+					</ul>
+				  </div>
+				</div>
+			  <div class="card-footer text-center">
+			    <h6 class="card-title"><a href="#" class="card-link">TOP</a></h6>
+			  </div>
+			</div>
 		</div>
-		<div id='projects'>
-			<h2>PROJECTS</h2>
-			<ul>
-				<li><p><a href="https://www.kaggle.com/code/ashx010/titanic-data-analysis-and-model-deployment" target="blank">TITANIC SURVIVAL PREDICTION</a></p></li>
-				<li><p><a href="https://www.kaggle.com/code/ashx010/house-price-data-analysis-and-prediction-model" target="blank">HOUSE PRICE PREDICTION</a></p></li>
-				<li><p><a href="https://www.kaggle.com/code/ashx010/digit-recognizer-cnn-computer-vision-0-986" target="blank">DIGIT RECOGNIZER</a></p></li>
-			</ul>
+		<div id ="experienceper" style="padding: 2% 10% 0 10%;">
+			<div class="card" style="width: 100%;">
+			  <div class="card-header text-center">
+			    <h5 class="card-title">EXPERIENCE</h5>
+			  </div>
+			  <div class="card-body">
+			    <h5 class="card-title">IBM</h5>
+			    <h6 class="card-subtitle mb-2 text-body-secondary">Data Science Trainee<br>August, 2022 (1 month)</h6>
+			  </div>
+			  <div class="card-body">
+			    <h5 class="card-title">Mapping DigiWorld</h5>
+			    <h6 class="card-subtitle mb-2 text-body-secondary">Backend Developer Intern<br>September, 2023 - Present</h6>
+			  </div>
+			  <div class="card-footer text-center">
+			    <h6 class="card-title"><a href="#" class="card-link">TOP</a></h6>
+			  </div>
+			</div>
+		</div>
+		<div id="projectsper" style="padding: 2% 10% 0 10%">
+			<div class="card" style="width: 100%;">
+				<div class="card-header text-center">
+					<h5 class="card-title">PROJECTS</h5>
+				</div>
+				<div class="row">
+				  <div class="col-sm-6 ">
+				      <div class="card-body">
+				        <h5 class="card-title">TITANIC SURVIVAL ANALYSIS & PREDICTION MODEL</h5>
+				        <a href="https://www.kaggle.com/code/ashx010/titanic-data-analysis-and-model-deployment" target="blank" class="btn btn-primary">OPEN PROJECT</a>
+				      </div>
+				  </div>
+				  <div class="col-sm-6">
+				      <div class="card-body">
+				        <h5 class="card-title">HOUSE PRICE ANALYSIS AND PREDICTION MODEL</h5>
+				        <a href="https://www.kaggle.com/code/ashx010/house-price-data-analysis-and-prediction-model" target="blank" class="btn btn-primary">OPEN PROJECT</a>
+				      </div>
+				  </div>
+				  <div class="col-sm-6">
+				      <div class="card-body">
+				        <h5 class="card-title">DIGIT RECOGNIZER</h5>
+				        <a href="https://www.kaggle.com/code/ashx010/digit-recognizer-cnn-computer-vision-0-986" target="blank" class="btn btn-primary">OPEN PROJECT</a>
+				      </div>
+				  </div>
+				</div>
+				<div class="card-footer text-center">
+			    <h6 class="card-title"><a href="#" class="card-link">TOP</a></h6>
+			  </div>
+			</div>
 		</div>
 	</body>
 </html>
