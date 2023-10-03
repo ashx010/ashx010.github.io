@@ -1,0 +1,537 @@
+{
+  "type": "FeatureCollection",
+  "name": "Dart_Global_Logistics",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Orient Fashion Exports (India) Private Limited",
+        "Address": "E-45 /14, Okhla Phase II Okhla Industrial Area New Delhi, India 110020",
+        "Pin_Code": "110020",
+        "Phone": "011- 42600000",
+        "Email": "info@orientfashions.com",
+        "Website": "https://www.orientfashions.com/",
+        "Product_Ca": "Garments/Apparels",
+        "Lat": 28.5353,
+        "Long": 77.268323
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2683227630268,
+          28.535299960844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Export Import International",
+        "Address": "N-26, Sailing Club Road, Batla House, Jamia Nagar, Okhla, New Delhi – 110025",
+        "Pin_Code": "110025",
+        "Phone": "+91-9899329046",
+        "Email": "contactus@ximdeco.com",
+        "Website": "https://www.ximdeco.com/",
+        "Product_Ca": "Home and Office Décor",
+        "Lat": 28.567457,
+        "Long": 77.290205
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2902045519195,
+          28.5674572327321
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Affordable Exports Pvt. Ltd.",
+        "Address": "189, F.I.E., Patparganj Industrial Area, Delhi - 110092, India",
+        "Pin_Code": "110092",
+        "Phone": "011 – 49423957",
+        "Email": "affordable@affordableexports.com",
+        "Website": "https://affordableexports.com/",
+        "Product_Ca": "Garments/Apparels",
+        "Lat": 28.643563,
+        "Long": 77.31545
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.3154500365413,
+          28.6435626427249
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "suryaexports",
+        "Address": "D-14/3, Okhla Industrial, Area Phase II New Delhi, Delhi, India, 110020",
+        "Pin_Code": "110020",
+        "Phone": "9.1114170505e+011",
+        "Email": "ask@suryaexports.net",
+        "Website": "https://www.suryaexports.net/",
+        "Product_Ca": "Textile/Home décor",
+        "Lat": 28.532494,
+        "Long": 77.273543
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.273542758612,
+          28.5324935344613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "exporttown",
+        "Address": "D 94, THIRD FLORR , CHAND BAGH KARWAL NAGAR, New Delhi, India 110094",
+        "Pin_Code": "110094",
+        "Phone": "9.1882606124e+011",
+        "Email": "info@exporttwon.com",
+        "Website": "https://exporttown.com/",
+        "Product_Ca": "Food Importers and Exporters",
+        "Lat": 28.6316,
+        "Long": 77.221677
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2216772771827,
+          28.6316003753854
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Devini LLP",
+        "Address": "No. 88, Apna Ghar Society Pitampura Delhi 110034 India",
+        "Pin_Code": "110034",
+        "Phone": "+91-9810437895",
+        "Email": "info@devinillp.com",
+        "Website": "https://www.devinillp.com/",
+        "Product_Ca": "Gifts, Home Décor and Christmas Decorative items",
+        "Lat": 28.690185,
+        "Long": 77.132094
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.1320940500069,
+          28.690184604662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Aamaya Impex",
+        "Address": "Prop No.34/10, Lekhram Farm Village Jonapur, New Delhi, India - 110074.",
+        "Pin_Code": "110074",
+        "Phone": "+91 9971421555",
+        "Email": "info@aamayaglobal.com",
+        "Website": "http://globalfoodsimportexport.com/",
+        "Product_Ca": "importers and exporters of quality food products",
+        "Lat": 28.710647,
+        "Long": 77.104795
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.1047947078644,
+          28.7106470347773
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "shreejeeexports",
+        "Address": "A-3/45-46, Sector-5, Rohini, Delhi-110085,Delhi",
+        "Pin_Code": "110085",
+        "Phone": "9810353511",
+        "Email": "shreejeeexports.com",
+        "Website": "http://www.shreejeeexports.com/",
+        "Product_Ca": "Ladies Garments",
+        "Lat": 28.711858,
+        "Long": 77.106825
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.1068245097442,
+          28.711857522664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "oddwayinternational",
+        "Address": "4216/20, 1 Ansari Road, Daryaganj,New Delhi 110002 India.",
+        "Pin_Code": "110002",
+        "Phone": "+91-11-43526658",
+        "Email": "sales@oddwayinternational.com",
+        "Website": "https://www.oddwayinternational.com/",
+        "Product_Ca": "Pharmaceuticals/Medicines",
+        "Lat": 28.64111,
+        "Long": 77.244992
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2449921069978,
+          28.6411100907142
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Rice India Exports Pvt Ltd",
+        "Address": "SF-22, 2nd Floor, Pearls Omaxe, Netaji Subhash Place, Pitampura, New Delhi-110034",
+        "Pin_Code": "110034",
+        "Phone": "+91-11-27358064",
+        "Email": "riceindia98@gmail",
+        "Website": "https://www.riwazbasmati.com/",
+        "Product_Ca": "Rice exporters",
+        "Lat": 28.690703,
+        "Long": 77.151795
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.151794908924,
+          28.6907030277878
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "jankiexports",
+        "Address": "N-102, ARYA APPRTMENT SECTOR-15, ROHINI,DELHI – 110085(INDIA)",
+        "Pin_Code": "110085",
+        "Phone": "+91-11-27322183",
+        "Email": "lkmishra@jankiexports.com",
+        "Website": "https://www.jankiexports.com/",
+        "Product_Ca": "Apparels",
+        "Lat": 28.730928,
+        "Long": 77.127718
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.1277184104876,
+          28.7309276194427
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "activefashionindia",
+        "Address": "15/4A 3rd floor Sector 23 Rohini,Delhi-110085",
+        "Pin_Code": "110085",
+        "Phone": "+91-9999387774",
+        "Email": "info@activefashionindia.com",
+        "Website": "https://activefashionindia.com/",
+        "Product_Ca": "Apparels",
+        "Lat": 28.720982,
+        "Long": 77.075839
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0758390217591,
+          28.7209821034355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "delhihandicraft",
+        "Address": "12/45, Site IV, Sahibabad Industrial Area, Ghaziabad, Uttar Pradesh, India - 201010",
+        "Pin_Code": "201010",
+        "Phone": "+91-120-2987041",
+        "Email": "info@delhihandicraft.in",
+        "Website": "https://delhihandicraft.in/",
+        "Product_Ca": "Fashion accessories",
+        "Lat": 28.661211,
+        "Long": 77.33086
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.3308599783303,
+          28.6612105167011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "ankhuaexports",
+        "Address": "H-45, Sector-63, Noida, Distt - Gautam Budh Nagar (U.P.) 201301",
+        "Pin_Code": "201301",
+        "Phone": "+91-120-4635555",
+        "Email": "shipping@ankhuaexports.com",
+        "Website": "https://www.ankhuaexports.com/",
+        "Product_Ca": "Indian Handicrafts, Garments, Home Décor",
+        "Lat": 28.629159,
+        "Long": 77.376575
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.3765746126761,
+          28.6291589946363
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "ndeh",
+        "Address": "K-23/24, Sector-18 Noida-201301.INDIA",
+        "Pin_Code": "201301",
+        "Phone": "0120-2514254",
+        "Email": "info@ndeh.com",
+        "Website": "http://www.ndeh.com/",
+        "Product_Ca": "Garments/Apparels",
+        "Lat": 28.614722,
+        "Long": 77.384321
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.3843213710057,
+          28.6147224003409
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "poojaintl",
+        "Address": "A-20, Sector 64 Noida NCR, Uttar PradeshIndia – 201307",
+        "Pin_Code": "201307",
+        "Phone": "+91-70114 72441",
+        "Email": "hr@poojaintl.com",
+        "Website": "https://www.poojaintl.com/",
+        "Product_Ca": "Garments/Apparels",
+        "Lat": 28.613381,
+        "Long": 77.378566
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.3785658672645,
+          28.6133809426409
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "sabsexports",
+        "Address": "C - 103, Sector 63, Noida - 201 301 (U.P.), INDIA",
+        "Pin_Code": "201 301",
+        "Phone": "+(91) 120 402 9999",
+        "Email": "admin@sabsexports.com",
+        "Website": "https://sabsexports.com/",
+        "Product_Ca": "Apparels",
+        "Lat": 28.616542,
+        "Long": 77.384221
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.3842211765943,
+          28.6165418648078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "inspirationoverseas",
+        "Address": "Address: Plot No. 36, Udyog Vihar, Phase-VI, Sector 37, Khandasa, Gurgaon-122001 (Haryana)",
+        "Pin_Code": "122001",
+        "Phone": "+91-9811 940 620",
+        "Email": "chhibavikrant@artindiaexports.com",
+        "Website": "http://inspirationoverseas.com/",
+        "Product_Ca": "Apparels",
+        "Lat": 28.435712,
+        "Long": 77.004921
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0049206696114,
+          28.4357118440479
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "simraninternational",
+        "Address": "Plot no. 421 Sector 37, Pace City II Gurugram Haryana,India-122001",
+        "Pin_Code": "122001",
+        "Phone": "+91-124-4669500",
+        "Email": "hardip.s@simraninternational.com",
+        "Website": "https://www.simraninternational.com/",
+        "Product_Ca": "Leather Garments",
+        "Lat": 28.440375,
+        "Long": 76.998733
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9987334108945,
+          28.4403753195468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "anishindiaexports",
+        "Address": "Anish India Exports, plot no. 280-281, sector-37, Gurugram - 122004",
+        "Pin_Code": "122004",
+        "Phone": "0124 401 0374",
+        "Email": "frontdesk@aieapparels.com",
+        "Website": "https://www.anishindiaexports.com/",
+        "Product_Ca": "Apparels",
+        "Lat": 28.432959,
+        "Long": 76.995273
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9952729327013,
+          28.4329589045835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "combyteexports",
+        "Address": "Plot No. 738A, Udyog Vihar Pace City II Sector 37 Gurgaon 122001 Haryana",
+        "Pin_Code": "122001",
+        "Phone": "+91-8467895079",
+        "Email": "info@combyteexports.com",
+        "Website": "https://combyteexports.com/",
+        "Product_Ca": "Textiles",
+        "Lat": 28.430111,
+        "Long": 76.991086
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9910860810512,
+          28.4301107279221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "mhkexports",
+        "Address": "882, Udyog Vihar, Phase – 5,Gurgaon-122016",
+        "Pin_Code": "122016",
+        "Phone": "+91-124-4554301",
+        "Email": "bhavyakeswani@mhkexports.com",
+        "Website": "https://www.mhkexports.com/",
+        "Product_Ca": "women and children woven garments",
+        "Lat": 28.505009,
+        "Long": 77.085262
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0852619066411,
+          28.5050094555561
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ranvik Exports Pvt. Ltd",
+        "Address": "Unit 299-300 Sector-7, IMT-Manesar, Gurgaon-122050, Haryana (India)",
+        "Pin_Code": "122050",
+        "Phone": "+91-124-4369035",
+        "Email": "marketing@ranvikexports.com",
+        "Website": "http://www.ranvikexports.com/",
+        "Product_Ca": "metal and leather products",
+        "Lat": 28.374148,
+        "Long": 76.909627
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9096269377944,
+          28.374148463622
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Elements Exports Pvt. Ltd.",
+        "Address": "Plot No. 406, Sector 37, Pace City – II,Khandsa, Gurugram, Haryana,India 122002",
+        "Pin_Code": "122002",
+        "Phone": "+91-124-2212209",
+        "Email": "info@elementsexports.com",
+        "Website": "https://elementsexports.com/",
+        "Product_Ca": "bags and accessories",
+        "Lat": 28.438287,
+        "Long": 76.999249
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9992485286049,
+          28.4382869316126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Shree Balaji Exports Inc",
+        "Address": "Plot number 700 & 679, Pace City 2, Sector 37, Khandsa, Gurugram 122004, Haryana, India",
+        "Pin_Code": "122004",
+        "Phone": "012 44002214",
+        "Email": "info@sbei.in",
+        "Website": "https://shreebalajiexports.in/",
+        "Product_Ca": "Garments/Apparels",
+        "Lat": 28.43271,
+        "Long": 76.994406
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9944062400486,
+          28.432709536133
+        ]
+      }
+    }
+  ]
+}
