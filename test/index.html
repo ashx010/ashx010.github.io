@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://sl27.in/posoco/css/flush_message.css?v=1.0.0.1">
+  <link rel="stylesheet" href="http://sl27.in/posoco/css/bootstrap-multiselect.css?v=1.0.0.1">
+  <link rel="stylesheet" href="http://sl27.in/posoco/css/bootstrap.min.css?v=1.0.0.1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="http://sl27.in/posoco/js/jquery.min.js?v=1.0.0.1"></script>
+  <script src="http://sl27.in/posoco/js/bootstrap.min.js?v=1.0.0.1"></script>
+  <script src="http://sl27.in/posoco/js/bootstrap-multiselect.js?v=1.0.0.1"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.5/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+
+  <script src="Delhi_State_Boundary.geojson"></script>
+  <script src="Uttar_Pradesh_State_Boundary.geojson"></script>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <style>
+    .popup-table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .popup-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    .popup-table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .popup-table tr:hover {
+      background-color: #ddd;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+
+    .toptable {
+      margin-bottom: 20px;
+    }
+
+    .nodetablerow {
+      margin-bottom: 20px;
+    }
+
+    .nodes-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+
+
+
+    .geographydetailsrow {
+      position: absolute;
+      top: 109px;
+      /* left: 170px; */
+      right: 10px;
+      z-index: 999;
+    }
+
+
+    #map {
+      height: 90vh;
+    }
+
+    form#myForm {
+      padding: 20px;
+    }
+
+    .form-group select {
+      width: 100%;
+      outline: none;
+      border: none;
+      background: #8dcebfb0;
+      color: #333;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      border-bottom: 2px solid #0e3657;
+      padding-bottom: 11px;
+    }
+
+    /* .leaflet-marker-pane {
+      display: none !important;
+    }
+
+    .leaflet-marker-pane.active {
+      display: block !important;
+    } */
+
+    .leaflet-pane.leaflet-overlay-pane .leaflet-interactive {
+      fill: #e8b34d;
+      /* stroke: #33822c; */
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="col-1">
+    <header class="container-fluid headrow">
+      <div class="col-md-3 col-xs-12">
+        <div class="row">
+          <!-- <div class="logosec">
+            <img class="imglogo" alt="Power System Operation Corporation Limited" src="./image/kia-logo.webp">
+          </div> -->
+        </div>
+      </div>
+
+      <div class="col-md-6 col-xs-12 head-midcol">
+        <div class="row">
+          <div class="headingsec">
+            <!-- <h4>Power System Operation Corporation Limited (POSOCO)<br>(A Government of India Enterprise) CIN:
+                    U40105DL2009GOI188682</h4> -->
+            <!-- <h1>Kia India</h1> -->
+            <div class="logosec">
+              <img class="imglogo" alt="Kia India" src="./image/kia-logo.webp">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="col-md-6 col-xs-12 head-midcol">
+        <div class="row">
+          <div class="headingsec">
+            <!-- <h4>Power System Operation Corporation Limited (POSOCO)<br>(A Government of India Enterprise) CIN:
+                    U40105DL2009GOI188682</h4> -->
+           
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-xs-12">
+        <div class="row">
+          <div class="usersec">
+            <!-- <h4>Hello Nurul!</h4> -->
+            <ul class="usernav navbar-nav">
+              <li class="userdropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demo User!<span
+                    class="glyphicon glyphicon-user pull-right"></span></a>
+                <ul class="dropdown-menu">
+                  <!-- <li><a href="#">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                <li class="divider"></li>
+                <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
+                <li class="divider"></li>
+                <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
+                <li class="divider"></li>
+                <li><a href="#">Favourites Snippets <span class="glyphicon glyphicon-heart pull-right"></span></a></li>
+                <li class="divider"></li> -->
+                  <li><a href="/posoco1/admins/logout">Sign Out <span
+                        class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="modal fade" id="nodeModal" tabindex="-1" role="dialog" aria-labelledby="nodeModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body" id="editFrom"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid loadDespatchRow">
+      <div class="row">
+        <!-- New Section to add map online -->
+        <div class="map-container">
+          <div id="map"></div>
+        </div>
+        <!-- New Section to add map online end -->
+        <div class="node col-md-3 col-xs-12 selectbtns">
+          <!-- Left Collaps button -->
+          <!-- <div  class="leftcollapsebtn" data-toggle="collapse" data-target="#leftcoltab">
+          <img src="http://sl27.in/posoco/img/left-collapse-button.png">
+        </div> -->
+          <div class="menu btn1" data-toggle="collapse" data-target="#leftcoltab">
+            <div class="icon-left"></div>
+            <div class="icon-right"></div>
+          </div>
+          <!-- Left collapse btn end -->
+          <div id="leftcoltab" class="formselect collapse">
+            <form name="myform" id="myForm">
+              <div class="form-group">
+                <select id="CouuntrySel" size="1">
+                  <option value="" selected="selected"> Select Country</option>
+                  <option value="India">India</option>
+                </select>
+              </div>
+              <br>
+              <div class="form-group">
+                <select id="stateSel" size="1">
+                  <option value="" selected="selected">Select State</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                </select>
+              </div>
+              <br>
+              <div class="form-group">
+                <select id="districtSel" size="1">
+                  <option value="" selected="selected">Select District</option>
+                </select>
+              </div>
+              <br>
+              <div class="form-group">
+                <select id="subDistrictSel" size="1">
+                  <option value="" selected="selected">Select Sub-District</option>
+                </select>
+              </div>
+              <br>
+              <div class="form-group">
+                <select id="TownSel" size="1">
+                  <option value="" selected="selected">Select Town</option>
+                </select>
+              </div>
+              <br>
+              <div class="form-group">
+                <select id="Pin-codeSel" size="1">
+                  <option value="" selected="selected">Select Pin-Code</option>
+                </select>
+              </div>
+              <br>
+              <!-- <div class="form-group">
+                <select id="CompanySel" size="1">
+                  <option value="" selected="selected"> Select Company Name</option>
+                </select>
+              </div>
+              <br>
+              <div class="form-group">
+                <select id="dealerSel" size="1">
+                  <option value="" selected="selected"> Select Dealer Name</option>
+                </select>
+              </div> -->
+              <!-- <br> -->
+              <!-- <div class="form-group">
+                <input type="checkbox" id="showRoom" name="fav_language" value="Showroom">
+                <label for="html">Show Room</label><br>
+                <input type="checkbox" id="ragisterOffice" name="fav_language" value="Registered Office">
+                <label for="css">Registered Office</label><br>
+                </select>
+              </div> -->
+            </form>
+            <!-- Switch Section End -->
+            <div id="submitBtn">
+              <button type="submit" onClick="location.reload(true)" class="btn btn-default">Reset</button>
+              <button type="button" onClick="submitForm()" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-md-offset-3 col-xs-12 geographydetailsrow">
+      <!-- Right Collaps button -->
+      <!-- <div class="rightcollapsebtn" data-toggle="collapse" data-target="#rightcoltab">
+      <img src="http://sl27.in/posoco/img/right-collapse-button.png">
+    </div> -->
+      <div class="menu btn2" data-toggle="collapse" data-target="#rightcoltab">
+        <div class="icon-left"></div>
+        <div class="icon-right"></div>
+      </div>
+      <!-- Right collapse btn end -->
+      <div id="rightcoltab" class="detailsrightSec collapse">
+        <!-- Top Table -->
+        <!-- Geography Title Section -->
+        <div class="geographyhed-row">
+          <h2 class="geography-title">Geography Details</h2>
+          <!-- Export PDF Button -->
+          <button onclick="generatePDF()">Generate PDF</button>
+        </div>
+        <!-- Geography Title Section End -->
+        <div id="pdfContent">
+          <div class="table-responsive toptable">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Country</th>
+                  <th>State</th>
+                  <th>District</th>
+                  <th>Sub-District</th>
+                  <th>Town</th>
+                  <th>Pin-Code</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="cmpany_name"></td>
+                  <td id="address"></td>
+                  <td id="phone"></td>
+                  <td id="pin_Code"></td>
+                  <td id="phone"></td>
+                  <td id="email"></td>
+                  <td id="website"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+
+        <div class="nodetablerow">
+          <h2 class="nodes-title">Dart Global Logistics Details</h2>
+        </div>
+
+        <table class="table table-bordered" id="stationTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>PinCode</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Website</th>
+              <th>Product Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="Name_cell"></td>
+              <td id="Address_cell"></td>
+              <td id="region_cell"></td>
+              <td id="PinCode_cell"></td>
+              <td id="Email_cell"></td>
+              <td id="Website_cell"></td>
+              <td id="ProductCategory_cell"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+          <script src="https://unpkg.com/esri-leaflet@2.3.2/dist/esri-leaflet.js"
+            integrity="sha512-6LVib9wGnqVKIClCduEwsCub7iauLXpwrd5njR2J507m3A2a4HXJDLMiSZzjcksag3UluIfuW1KzuWVI5n/cuQ=="
+            crossorigin=""></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.5/jspdf.plugin.autotable.min.js"></script>
+
+          <script type="text/javascript">
+            var mymap = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+              osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+              osm = L.tileLayer(mymap, {
+                maxZoom: 13,
+                attribution: osmAttrib
+              }),
+              map = new L.Map('map', {
+                center: new L.LatLng(20.5937, 78.9629),
+                zoom: 5
+              });
+            drawnItems = L.esri.basemapLayer('Streets').addTo(map);
+            L.control.layers({
+              'osm': osm.addTo(map)
+            }, {
+              'drawlayer': drawnItems
+            }, {
+              position: 'topleft',
+              collapsed: false
+            }).addTo(map);
+            L.control.zoom({
+              position: 'bottomright'
+            }).addTo(map);
+            var popup = L.popup();
+            var LeafIcon = L.Icon.extend({
+              options: {
+                iconSize: [36, 49],
+                shadowSize: [50, 64],
+                iconAnchor: [22, 94],
+                shadowAnchor: [4, 62],
+                popupAnchor: [-3, -76]
+              }
+            });
+
+
+        var stateLayers = {};
+        var districtLayer = null;
+        var markerLayer = null;
+        var subDistrictLayer = null;
+        var townLayer = null;
+        var pincodeLayer = null;
+
+        var selectedStateLayer = null;
+        var delhiDistrictData;
+        var uttarPradeshDistrictData;
+        var uttarPradeshSubDistrictData;
+
+        var pincodesdelhi; 
+        var pincodesup;
+        var subdistrictdelhi;
+
+        var filterArray = ['stateSel','districtSel','subDistrictSel','TownSel','Pin-codeSel','CompanySel','dealerSel'];
+
+        
+        //sub district data of delhi
+        $.getJSON('Delhi_Sub_District_Boundary.geojson', function(data) {
+          subdistrictdelhi = data;
+        });
+
+        //pin code data of Delhi
+        $.getJSON('Delhi/Geojson/Delhi_Pincode.geojson', function(data) {
+          pincodesdelhi = data;
+        });
+
+        //pin code data of Uttar Pradesh
+        $.getJSON('Uttar_Pradesh_Pincode_Boundary.geojson', function(data) {
+          pincodesup = data;
+        });
+
+        // Load state boundary data
+        $.getJSON('Delhi_State_Boundary.geojson', function(data) {
+            stateLayers['Delhi'] = L.geoJSON(data, {
+                style: {
+                    color: '#3388ff',
+                    fillOpacity: 0.2,
+                    weight:3
+                }
+            });
+        });
+        
+
+        // Load district boundary data for Delhi
+        $.getJSON('Delhi_District_Boundary.geojson', function(data) {
+          delhiDistrictData = data;
+        });
+
+        // Load state boundary data
+        $.getJSON('Uttar_Pradesh_State_Boundary.geojson', function(data) {
+            stateLayers['Uttar Pradesh'] = L.geoJSON(data, {
+                style: {
+                    color: '#3388ff',
+                    fillOpacity: 0.2,
+                    weight: 3
+                }
+            });
+        });
+
+        // Load district boundary data for Uttar Pradesh
+        $.getJSON('Uttar_Pradesh_District_Boundary.geojson', function(data) {
+            uttarPradeshDistrictData = data;
+        });
+
+
+        // Function to create sub boundaries
+        function subboundary(path, level, usr_lvl, pincodesd){
+          // adding sub layers for sub districts
+          $.getJSON(path, function(data) {
+            data.features.forEach(feature => {
+              if ((feature.properties[level] == usr_lvl) || (level == usr_lvl)){
+                L.geoJSON(feature, {
+                  style: {
+                    color: 'green',
+                    fillOpacity: 0,
+                    weight: 1.5
+                  }
+                }).addTo(Layergrp);
+              }
+            });
+          });
+
+          var pin = new Set();
+          
+          pincodesd.features.forEach(feature => {
+            if ((feature.properties[level] == usr_lvl) || (level == usr_lvl)){
+              pin.add(feature.properties.pincode);
+            }
+          });
+
+          // adding logistics data wrt pincode 
+          $.getJSON('office/Dart_Global_Logistics.geojson', function(data){
+            data.features.forEach(feature => {
+              if (pin.has(feature.properties.Pin_Code)){
+                L.marker([feature.properties.Lat, feature.properties.Long]).addTo(Layergrp);
+              }
+            });
+          });
+        }
+        
+
+        // Load sub-district boundary data for Uttar Pradesh
+        // $.getJSON('Uttar_Pradesh_Sub_District_Boundary.geojson', function(data) {
+        //     uttarPradeshSubDistrictData = data;
+
+        //     var subDistrictSel = document.getElementById('subDistrictSel');
+        //     uttarPradeshSubDistrictData.features.forEach(feature => {
+        //         var subDistrictName = feature.properties.SUB_DIST_N;
+        //         var option = document.createElement('option');
+        //         option.value = subDistrictName;
+        //         option.textContent = subDistrictName;
+        //         subDistrictSel.appendChild(option);
+        //     });
+        // });
+           // Add event listener for state dropdown to populate district dropdown
+$('#stateSel').on('change', function () {
+  var selectedState = $("#stateSel").val();
+  var districtSel = document.getElementById('districtSel');
+  var TownSel = document.getElementById('TownSel');
+  var subDistrictSel = document.getElementById('subDistrictSel');
+  var pinCode = document.getElementById('Pin-codeSel');
+  $('#districtSel').find('option').remove().end().append("<option value=''>Select District</option>");
+  $('#subDistrictSel').find('option').remove().end().append("<option value=''>Select Sub District</option>");
+  $('#TownSel').find('option').remove().end().append("<option value=''>Select Town</option>");
+  $('#Pin-codeSel').find('option').remove().end().append("<option value=''>Select Pin Code</option>");
+
+  if (selectedState === 'Delhi') {
+    var districtSel = document.getElementById('districtSel');
+    delhiDistrictData.features.forEach(feature => {
+    var districtName = feature.properties.DIST_NAME;
+    var option = document.createElement('option');
+    option.value = districtName;
+    option.textContent = districtName;
+    districtSel.appendChild(option);
+    });
+
+  } else {
+    var districtSel = document.getElementById('districtSel');
+    uttarPradeshDistrictData.features.forEach(feature => {
+        var districtName = feature.properties.DIST_NAME;
+        var option = document.createElement('option');
+        option.value = districtName;
+        option.textContent = districtName;
+        districtSel.appendChild(option);
+    });
+  }
+});
+
+// Bind district
+$('#districtSel').on('change', function () {
+  var selectedDistrict = $("#districtSel").val();
+  var subDistrictSel =  document.getElementById('subDistrictSel');
+  var TownSel =  document.getElementById('TownSel');
+  var pinCode =  document.getElementById('Pin-codeSel');
+
+  $('#subDistrictSel').find('option').remove().end().append("<option value=''>Select Sub District</option>");
+  $('#TownSel').find('option').remove().end().append("<option value=''>Select Town</option>");
+  $('#Pin-codeSel').find('option').remove().end().append("<option value=''>Select Pin Code</option>");
+
+  var selectedState = $("#stateSel").val();
+
+  if (selectedState === 'Delhi') {
+    var option = document.createElement('option');
+            option.value = '';
+            option.textContent = '';
+    $.getJSON('Delhi_Sub_District_Boundary.geojson', function(data) {
+            data.features.forEach(feature => {
+                var districtSubCityName = feature.properties.SUB_DIST_N;
+                // var subDistrictVal = feature.properties.DIST_CODE;
+                if (selectedDistrict == feature.properties.DIST_NAME) {
+                  var option = document.createElement('option');
+                  option.value = districtSubCityName;
+                  option.textContent = districtSubCityName;
+                  subDistrictSel.appendChild(option);
+                }
+            });
+        });
+  } else {
+    var option = document.createElement('option');
+            option.value = '';
+            option.textContent = '';
+    $.getJSON('Uttar_Pradesh_Sub_District_Boundary.geojson', function(data) {
+            data.features.forEach(feature => {
+                var districtSubCityName = feature.properties.SUB_DIST_N;
+                // var subDistrictVal = feature.properties.DIST_CODE;
+                if (selectedDistrict == feature.properties.DIST_NAMEEEEEEEE) {
+                  var option = document.createElement('option');
+                  option.value = districtSubCityName;
+                  option.textContent = districtSubCityName;
+                  subDistrictSel.appendChild(option);
+                }
+            });
+        });
+  }
+});
+
+// Bind sub district
+$('#subDistrictSel').on('change', function () {
+  var subDistrictSel = $("#subDistrictSel").val();
+  var TownSel =  document.getElementById('TownSel');
+  var pinCode =  document.getElementById('Pin-codeSel');
+
+  $('#TownSel').find('option').remove().end().append("<option value=''>Select Town</option>");
+  $('#Pin-codeSel').find('option').remove().end().append("<option value=''>Select Pin Code</option>");
+
+  var selectedState = $("#stateSel").val();
+
+  if (selectedState === 'Delhi') {
+    var option = document.createElement('option');
+    option.value = '';
+    option.textContent = '';
+    $.getJSON('Delhi_Town_Boundary.geojson', function(data) {
+            data.features.forEach(feature => {
+                var TownName = feature.properties.NAME;
+                if (subDistrictSel == feature.properties.SUB_DIST_N) {
+                  var option = document.createElement('option');
+                  option.value = TownName;
+                  option.textContent = TownName;
+                  TownSel.appendChild(option);
+                }
+            });
+        });
+  } else {
+    var option = document.createElement('option');
+    option.value = '';
+    option.textContent = '';
+    $.getJSON('Uttar_Pradesh_Town_Boundary.geojson', function(data) {
+            data.features.forEach(feature => {
+                var TownName = feature.properties.NAME;
+                if (subDistrictSel == feature.properties.SUB_DIST_N) {
+                  var option = document.createElement('option');
+                  option.value = TownName;
+                  option.textContent = TownName;
+                  TownSel.appendChild(option);
+                }
+            });
+        });
+  }
+});
+
+// Bind Town
+$('#TownSel').on('change', function () {
+  var TownSel = $("#TownSel").val();
+  var subDistrictSel = $("#subDistrictSel").val();
+  var pinCode =  document.getElementById('Pin-codeSel');
+  
+  $('#Pin-codeSel').find('option').remove().end().append("<option value=''>Select Pin Code</option>");
+
+  var selectedState = $("#stateSel").val();
+
+  if (selectedState === 'Delhi') {
+    var option = document.createElement('option');
+    option.value = '';
+    option.textContent = '';
+    $.getJSON('Delhi/Geojson/Towns_Pincode_Mapping.geojson', function(data) {
+            data.features.forEach(feature => {
+                var pin_code = feature.properties.pincode;
+                if (TownSel == feature.properties.NAME) {
+                  var option = document.createElement('option');
+                  option.value = pin_code;
+                  option.textContent = pin_code;
+                  pinCode.appendChild(option);
+                }
+            });
+        });
+  } else {
+    var option = document.createElement('option');
+    option.value = '';
+    option.textContent = '';
+    $.getJSON('up/Mapping_Town_Pincode_UP.geojson', function(data) {
+            data.features.forEach(feature => {
+              debugger;
+                var pin_code = feature.properties.pincode;
+                if (TownSel == feature.properties.NAME) {
+                  var option = document.createElement('option');
+                  option.value = pin_code;
+                  option.textContent = pin_code;
+                  pinCode.appendChild(option);
+                }
+            });
+        });
+  }
+});
+
+var Layergrp = L.layerGroup().addTo(map);
+
+// Modify the submitForm function
+function submitForm() {
+  var selectedState = $("#stateSel").val();
+  var selectedDistrict = $("#districtSel").val();
+  var selectedSubDistrict = $("#subDistrictSel").val();
+  var selectedTown = $("#TownSel").val();
+  var selectedPincode = $('#Pin-codeSel').val();
+  var marker = '';
+  // Remove previous layers if exist
+  
+  Layergrp.clearLayers();
+
+
+
+  if (selectedState == 'Delhi') {
+
+    if ((selectedDistrict == null || selectedDistrict == '') && (selectedSubDistrict == null || selectedSubDistrict=='') && (selectedTown == null ||selectedTown == '') && (selectedPincode == null ||selectedPincode == '')){
+
+      selectedStateLayer = stateLayers[selectedState].addTo(Layergrp);
+      map.fitBounds(selectedStateLayer.getBounds());
+
+      subboundary('Delhi_District_Boundary.geojson', 'delhi', 'delhi', pincodesdelhi);
+    }
+
+    if (selectedDistrict && (selectedSubDistrict == null || selectedSubDistrict=='') && (selectedTown == null ||selectedTown == '') && (selectedPincode == null ||selectedPincode == '')) {
+      var districtData = selectedState === 'Delhi' ? delhiDistrictData : uttarPradeshDistrictData;
+      
+
+      // selected district boundary
+      districtData.features.forEach(function(feature) {
+        if (feature.properties.DIST_NAME === selectedDistrict) {
+          districtLayer = L.geoJSON(feature, {
+            style: {
+              color: 'blue',
+              fillOpacity: 0.2,
+              weight: 3
+            }
+          }).addTo(Layergrp);
+        }
+      });
+      map.fitBounds(districtLayer.getBounds());
+      subboundary('Delhi_Sub_District_Boundary.geojson', 'DIST_NAME', selectedDistrict, pincodesdelhi);
+    }
+
+
+    if (selectedSubDistrict && (selectedTown == null ||selectedTown == '') && (selectedPincode == null ||selectedPincode == '')) {
+
+      subdistrictdelhi.features.forEach(feature => {
+        if (feature.properties.SUB_DIST_N == selectedSubDistrict){
+          console.log(11);
+          subDistrictLayer = L.geoJSON(feature, {
+            style: {
+              color: 'black',
+              fillOpacity: 0.2,
+              weight: 3
+            }
+          }).addTo(Layergrp);
+        }
+      });
+
+      map.fitBounds(subDistrictLayer.getBounds());
+      subboundary('Delhi_Town_Boundary.geojson', 'SUB_DIST_N', selectedSubDistrict, pincodesdelhi);
+    }
+
+    if (selectedTown && (selectedPincode == null ||selectedPincode == '')) {
+      $.getJSON('Delhi_Town_Boundary.geojson', function(data) {
+        data.features.forEach(feature => {
+          if ((selectedTown === feature.properties.NAME) && (feature.properties.SUB_DIST_N === selectedSubDistrict)){
+            townLayer = L.geoJSON(feature, {
+              style: {
+                color: 'green',
+                fillOpacity: 0.2,
+                weight: 2
+              }
+            }).addTo(Layergrp);
+          }
+        });
+      });
+      map.fitBounds(townLayer.getBounds());
+      subboundary('Delhi/Geojson/Towns_Pincode_Mapping.geojson', 'NAME', selectedTown, pincodesdelhi);
+    }
+
+
+    // pinCode
+    if (selectedPincode) {
+      $.getJSON('Delhi/Geojson/Towns_Pincode_Mapping.geojson', function(data) {
+              data.features.forEach(feature => {
+                  if ((selectedPincode == feature.properties.pincode) && (feature.properties.SUB_DIST_N == selectedSubDistrict) && (feature.properties.NAME == selectedTown)) {
+                    pincodeLayer = L.geoJSON(feature, {
+                      style: {
+                        color: 'red',
+                        fillOpacity: 0.2,
+                        weight: 2
+                      }
+                    }).addTo(Layergrp);
+                    // $("#selectedSubDistrict").text("Selected Sub-District: " + selectedSubDistrict);
+                    map.fitBounds(pincodeLayer.getBounds());
+                  }
+              });
+          });
+          
+    }
+   
+
+
+
+  }else{
+
+    if ((selectedDistrict == null || selectedDistrict == '') && (selectedSubDistrict == null || selectedSubDistrict=='') && (selectedTown == null ||selectedTown == '') && (selectedPincode == null ||selectedPincode == '')){
+
+      selectedStateLayer = stateLayers[selectedState].addTo(Layergrp);
+      //$("#selectedState").text("Selected State: " + selectedState);
+      map.fitBounds(selectedStateLayer.getBounds());
+
+      subboundary('Uttar_Pradesh_District_Boundary.geojson', 'up', 'up', pincodesup);
+    }
+
+    if (selectedDistrict && (selectedSubDistrict == null || selectedSubDistrict=='') && (selectedTown == null ||selectedTown == '') && (selectedPincode == null ||selectedPincode == '')) {
+      var districtData = selectedState === 'Delhi' ? delhiDistrictData : uttarPradeshDistrictData;
+      districtData.features.forEach(function(feature) {
+        if (feature.properties.DIST_NAME === selectedDistrict) {
+          districtLayer = L.geoJSON(feature, {
+            style: {
+              color: '#f00',
+              fillOpacity: 0.2,
+              weight: 2
+            }
+          }).addTo(Layergrp);
+        }
+      });
+
+      //$("#selectedDistrict").text("Selected District: " + selectedDistrict);
+      map.fitBounds(districtLayer.getBounds());
+      subboundary('Uttar_Pradesh_Sub_District_Boundary.geojson', 'DIST_NAME', 'selectedDistrict', pincodesup);
+
+    }
+
+    if (selectedSubDistrict && (selectedTown == null ||selectedTown == '') && (selectedPincode == null ||selectedPincode == '')) {
+    $.getJSON('Uttar_Pradesh_Sub_District_Boundary.geojson', function(data) {
+              data.features.forEach(feature => {
+                if (feature.properties.SUB_DIST_N === selectedSubDistrict) {
+                  subDistrictLayer = L.geoJSON(feature, {
+                      style: {
+                        color: 'black',
+                        fillOpacity: 0.2,
+                        weight: 2
+                      }
+                    }).addTo(Layergrp);
+                  }
+              });
+          });
+      //$("#selectedSubDistrict").text("Selected Sub-District: " + selectedSubDistrict);
+      map.fitBounds(subDistrictLayer.getBounds());
+      subboundary('Uttar_Pradesh_Town_Boundary.geojson', 'SUB_DIST_N', 'selectedSubDistrict', pincodesup);
+
+    }
+
+    if (selectedTown && (selectedPincode == null ||selectedPincode == '')) {
+      $.getJSON('Uttar_Pradesh_Town_Boundary.geojson', function(data) {
+              data.features.forEach(feature => {
+                  if (selectedTown == feature.properties.NAME && feature.properties.SUB_DIST_N == selectedSubDistrict) {
+                    townLayer = L.geoJSON(feature, {
+                      style: {
+                        color: 'green',
+                        fillOpacity: 0.2,
+                        weight: 2
+                      }
+                    }).addTo(Layergrp);
+                    
+                  }
+              });
+          });
+      // $("#selectedSubDistrict").text("Selected Sub-District: " + selectedSubDistrict);
+      map.fitBounds(townLayer.getBounds());
+      subboundary('up/Mapping_Town_Pincode_UP.geojson', 'NAME', 'selectedTown', pincodesup);
+
+    }
+
+    if (selectedPincode) {
+      $.getJSON('up/Mapping_Town_Pincode_UP.geojson', function(data) {
+        data.features.forEach(feature => {
+          if (selectedPincode == feature.properties.pincode && feature.properties.SUB_DIST_N == selectedSubDistrict && feature.properties.NAME == selectedTown) {
+            pincodeLayer = L.geoJSON(feature, {
+              style: {
+                color: 'red',
+                fillOpacity: 0.2,
+                weight: 2
+              }
+            }).addTo(Layergrp);
+          // $("#selectedSubDistrict").text("Selected Sub-District: " + selectedSubDistrict);
+          map.fitBounds(pincodeLayer.getBounds());
+          }
+        });
+      });     
+    }
+  }
+}
+
+
+function generatePDF() {
+            const content = document.getElementById('pdfContent').innerHTML;
+            const filename = 'geography_details.pdf';
+
+            const options = {
+              margin: 0.25,
+              filename,
+              html2canvas: { scale: 2 },
+              jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' },
+              // Additional style options
+              image: { type: 'jpeg', quality: 0.98 },
+              pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
+              font: { size: 12 },
+              watermark: { text: 'Sample Watermark', alpha: 0.3 }
+            };
+
+            html2pdf().set(options).from(content).save();
+          }
+
+
+
+
+          function generatePDF() {
+            const content = document.getElementById('pdfContent').innerHTML;
+            const filename = 'geography_details.pdf';
+
+            const options = {
+              margin: 0.25,
+              filename,
+              html2canvas: { scale: 2 },
+              jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' },
+              // Additional style options
+              image: { type: 'jpeg', quality: 0.98 },
+              pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
+              font: { size: 12 },
+              watermark: { text: 'Sample Watermark', alpha: 0.3 }
+            };
+
+            html2pdf().set(options).from(content).save();
+          }
+
+          </script>
+</body>
+
+</html>
