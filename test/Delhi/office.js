@@ -1,0 +1,42 @@
+[
+    {
+        "State_Name": "Uttar Pradesh",
+        "State_Code": "09",
+        "District_Name": "Gautam Budh Nagar",
+        "District_Code": "141",
+        "Sub_district_Name": "Dadri",
+        "Sub_district_code": "00742",
+        "Level": "Town",
+        "Town/Village_Name": "Noida",
+        "Town/Village_code": "120227",
+        "Company_Name": "Toyota Kirloskar Motor Private Limited",
+        "Dealer_Name": "Espirit Toyota",
+        "Dealer_Full_Name": "Spirited Auto India Limited",
+        "Branch": "Noida",
+        "Type": "Showroom",
+        "Address": "Plot No D, 11, D Block, Sector 8, Noida, Uttar Pradesh 201301",
+        "Pin_code": "201301",
+        "Lat": "28.5975258348175",
+        "Long": "77.3292035999958"
+    },
+    {
+        "State_Name": "Delhi",
+        "State_Code": "07",
+        "District_Name": "South East",
+        "District_Code": "646",
+        "Sub_district_Name": "Kalkaji",
+        "Sub_district_code": "456",
+        "Level": "Town",
+        "Town/Village_Name": "Delhi",
+        "Town/Village_code": "064084",
+        "Company_Name": "Toyota Kirloskar Motor Private Limited",
+        "Dealer_Name": "Espirit Toyota",
+        "Dealer_Full_Name": "Spirited Auto India Limited",
+        "Branch": "Delhi",
+        "Type": "Registered Office",
+        "Address": "B-1, Badarpur Village, Badarpur, New Delhi, Delhi 110044",
+        "Pin_code": "110020",
+        "Lat": "28.4998086428158",
+        "Long": "77.3022929999977"
+    }
+   ]
