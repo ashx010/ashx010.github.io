@@ -408,7 +408,7 @@
         var filterArray = ['stateSel','districtSel','subDistrictSel','TownSel','Pin-codeSel','CompanySel','dealerSel'];
 
         //state data of delhi
-        $.getJSON('Delhi_State_Boundary.geojson', function(data) {
+        $.getJSON('Delhi/Geojson/Delhi_State_Boundary.geojson', function(data) {
             stateLayers['Delhi'] = L.geoJSON(data, {
                 style: {
                     color: '#3388ff',
@@ -419,7 +419,7 @@
         });
 
         //state data of up
-        $.getJSON('Uttar_Pradesh_State_Boundary.geojson', function(data) {
+        $.getJSON('up/Uttar_Pradesh_State_Boundary.geojson', function(data) {
             stateLayers['Uttar Pradesh'] = L.geoJSON(data, {
                 style: {
                     color: '#3388ff',
