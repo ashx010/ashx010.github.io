@@ -18,7 +18,6 @@ $email = $data['email'];
 $pass =$data['pass'];
 
 if(($email === 'demo@gmail.com') && ($pass === 'demo123')){
-	$_SESSION['user_authenticated'] = true;
 	echo json_encode(1);
 }else{
 	echo json_encode(0);
