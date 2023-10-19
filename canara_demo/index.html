@@ -64,7 +64,7 @@
       var pass = $('#inputPassword').val();
       $.ajax({
         type:'POST',
-        url: 'login.php',
+        url: 'https://ashx010.github.io/canara_bank/login.php',
         data: JSON.stringify({
           email:email,
           pass:pass
@@ -73,7 +73,7 @@
         success: function(response){
           var myjson = response;
           if(myjson === 1){
-            window.location.href = 'home.html';
+            window.location.href = 'https://ashx010.github.io/canara_bank/home.html';
           }else{
             alert('Wrong Credentials!!');
           }
