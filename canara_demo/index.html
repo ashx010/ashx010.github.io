@@ -52,15 +52,16 @@
               <input type="password" class="form-control" id="inputPassword">
             </div>
           </div>
-          <button class="btn btn-dark" id='submit'>SUBMIT</button>
+          <button class="btn btn-dark" id='submitf'>SUBMIT</button>
         </form>
       </div>
     </div>
   </div>
 
-  <script type="text/javascript">
-    $('#submit').on('click', function(){
-      var email = $('#inputEmail').val();
+  <script>
+    $('#submitf').on('click', function(){
+	    console.log('pass');
+      var email = $('#inputEmail').val();	
       var pass = $('#inputPassword').val();
       $.ajax({
         type:'POST',
@@ -72,6 +73,7 @@
         contentType: "application/json; charset=utf-8",
         success: function(response){
           var myjson = response;
+		console.log(myjson);
           if(myjson === 1){
             window.location.href = 'https://ashx010.github.io/canara_bank/home.html';
           }else{
