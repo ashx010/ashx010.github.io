@@ -1,0 +1,74 @@
+.btn-overlay {
+    position: absolute;
+    top: 13%;
+    z-index: 1000;
+    transition: opacity .5s;
+}
+.overlay {
+    position: absolute;
+    top: 20%;
+    z-index: 1000;
+    transition: opacity .5s;
+}
+
+.leaflet-marker-icon{
+    opacity: 0.85;
+}
+
+.nav-panel-custom{
+    background-color: white;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0px 0px 20px rgb(59 95 116 / 50%);
+}
+
+.login-panel{
+    top: 30%; 
+    position: absolute; 
+    padding-left: 30%;
+}
+
+#togglebtn{
+    border-radius: 5%;
+    box-shadow: 5px 5px 20px rgb(59 95 116 / 50%);
+}
+
+#rangerad{
+    margin: 2px 10px 2px 10px;
+    padding: 2px 2px 5px 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    width: 30px;
+}
+
+.easyPrintHolder .a3CssClass { 
+  background-image: url(data:image/svg+xml;utf8;base64,PD9...go=);
+}
+
+.button-form{
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 60px;
+}
+
+.dropdown-menu{
+    bs-dropdown-padding-x: 7%;
+    bs-dropdown-padding-y: 3%;
+}
+
+.scroll-button {
+    cursor: pointer;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+  width: 6px; /* for vertical scroll */
+  height: 6px; /* for horizontal scroll */
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: #618fea; 
+  border: 3px solid var(--white);
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
